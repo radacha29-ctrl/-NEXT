@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NEXT — แค่ทำสิ่งถัดไป</title>
+
+  <meta name="theme-color" content="#182657">
+
+  <link rel="manifest" href=""manifest.json>
+
+  <limk rel="apple-touch-icon" href="icons/icon-192.png">
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="app">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">NEXT</div>
+    <div class="tagline">แค่ทำสิ่งถัดไป</div>
+  </header>
+
+
+  <!-- WELCOME -->
+  <section class="welcome">
+
+    <div class="sun">☀️</div>
+
+    <h1 id="greeting">
+      สวัสดีตอนเช้า
+    </h1>
+
+    <p>
+      วันนี้ไม่ต้องทำทุกอย่าง<br>
+      แค่ทำสิ่งถัดไป
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       NEXT TASK
+  ========================== -->
+
+  <section class="task-card" id="taskCard">
+
+    <div class="task-header">
+
+      <span class="label">
+        NEXT TASK
+      </span>
+
+      <span
+        class="task-number"
+        id="taskNumber"
+      >
+        0 งาน
+      </span>
+
+    </div>
+
+
+    <div
+      class="pick-badge"
+      id="pickBadge"
+    >
+      ✨ NEXT เลือกให้แล้ว
+    </div>
+
+
+    <h2 id="taskName">
+      ยังไม่มีงาน
+    </h2>
+
+
+    <p
+      class="empty-message"
+      id="emptyMessage"
+    >
+      เพิ่มสิ่งแรกที่คุณอยากทำวันนี้ ✨
+    </p>
+
+
+    <!-- TIME -->
+
+    <div class="time-select">
+
+      <button
+        class="time-btn"
+        data-time="10"
+      >
+        10
+      </button>
+
+      <button
+        class="time-btn active"
+        data-time="20"
+      >
+        20
+      </button>
+
+      <button
+        class="time-btn"
+        data-time="30"
+      >
+        30
+      </button>
+
+    </div>
+
+
+    <div class="minute-label">
+      เลือกเวลาโฟกัส (นาที)
+    </div>
+
+
+    <!-- TIMER -->
+
+    <div
+      class="focus-area"
+      id="focusArea"
+    >
+
+      <div
+        class="progress-ring"
+        id="progressRing"
+      >
+
+        <div class="timer-content">
+
+          <span class="focus-text">
+            FOCUS
+          </span>
+
+          <div id="timerDisplay">
+            20:00
+          </div>
+
+          <span id="focusMessage">
+            ทำแค่สิ่งนี้ก็พอ
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- START -->
+
+    <button
+      class="primary-button"
+      id="startButton"
+    >
+      เริ่มเลย ▶
+    </button>
+
+
+    <!-- PICK FOR ME -->
+
+    <button
+      class="pick-button"
+      id="pickButton"
+    >
+      ✨ เลือกให้ฉัน
+    </button>
+
+
+    <!-- FOCUS CONTROLS -->
+
+    <div
+      class="focus-controls"
+      id="focusControls"
+    >
+
+      <button
+        class="secondary-button"
+        id="pauseButton"
+      >
+        ⏸ พัก
+      </button>
+
+      <button
+        class="secondary-button finish"
+        id="finishButton"
+      >
+        ✓ เสร็จแล้ว
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SUCCESS / DONE
+  ========================== -->
+
+  <section
+    class="success-card"
+    id="successCard"
+  >
+
+    <div class="celebration">
+      🎉
+    </div>
+
+    <div class="done-label">
+      DONE!
+    </div>
+
+    <h2>
+      คุณขยับไปข้างหน้า<br>
+      อีกหนึ่งก้าวแล้ว
+    </h2>
+
+    <p id="completedTaskMessage">
+      ทำสำเร็จแล้ว
+    </p>
+
+
+    <div class="success-stat">
+
+      <span>⭐</span>
+
+      <strong id="successCompletedCount">
+        1 งาน
+      </strong>
+
+      <small>
+        สำเร็จวันนี้
+      </small>
+
+    </div>
+
+
+    <button
+      class="primary-button"
+      id="nextTaskButton"
+    >
+      เอาอันต่อไป →
+    </button>
+
+  </section>
+
+
+  <!-- =========================
+       STATS
+  ========================== -->
+
+  <section class="stats">
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        🔥
+      </div>
+
+      <strong id="streakCount">
+        0 วัน
+      </strong>
+
+      <span>
+        Focus streak
+      </span>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        ⭐
+      </div>
+
+      <strong id="completedCount">
+        0 งาน
+      </strong>
+
+      <span>
+        สำเร็จวันนี้
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ADD TASK
+  ========================== -->
+
+  <section class="add-section">
+
+    <button
+      class="add-task-button"
+      id="showAddTask"
+    >
+      ＋ เพิ่มสิ่งที่อยากทำ
+    </button>
+
+
+    <div
+      class="add-panel"
+      id="addPanel"
+    >
+
+      <div class="add-panel-title">
+        วันนี้อยากทำอะไร?
+      </div>
+
+
+      <div class="input-row">
+
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="เช่น ทำ Dashboard ต่อ..."
+          maxlength="80"
+        >
+
+        <button id="addTaskButton">
+          +
+        </button>
+
+      </div>
+
+
+      <div class="input-hint">
+        ไม่ต้องคิดเยอะ แค่ใส่สิ่งที่อยากทำ
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TASK LIST
+  ========================== -->
+
+  <section class="task-list-section">
+
+    <div class="list-header">
+
+      <h3>
+        งานของฉัน
+      </h3>
+
+      <span id="remainingCount">
+        0 งาน
+      </span>
+
+    </div>
+
+
+    <div
+      class="task-list"
+      id="taskList"
+    >
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    หนึ่งก้าวเล็ก ๆ<br>
+    ก็พาคุณไปข้างหน้าได้
+  </footer>
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
