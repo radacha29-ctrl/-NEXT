@@ -1,4 +1,4 @@
-const CACHE_NAME = "next-v4";
+const CACHE_NAME = "next-v5";
 
 const FILES_TO_CACHE = [
   "./",
